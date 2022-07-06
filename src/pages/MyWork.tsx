@@ -102,7 +102,7 @@ function WorkSection({ currentIndex: sectionIndex, setThisCurrent: setSectionInd
   },[sectionIndex])
 
   return (
-      <div {...other} className="flex flex-col lg:flex-row w-full">
+      <div {...other} className="flex flex-col md:flex-row w-full">
         {workList.map((e, i) => {
           return (
             <WorkList
