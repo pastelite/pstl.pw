@@ -1,0 +1,28 @@
+.language-item {
+  @apply relative cursor-pointer;
+
+  //position: relative;
+
+  .language-item-icon {
+    @apply w-16 h-16 m-2 rounded-md flex justify-center items-center text-black;
+    transition: all 0.3s;
+  }
+
+  .language-item-text {
+    @apply absolute -top-8 p-1 left-0 right-0 w-fit m-auto rounded-md bg-white text-base text-black pointer-events-none;
+    transition: all 0.1s;
+    opacity: 0;
+  }
+}
+
+.language-item:hover {
+  .language-item-icon {
+    transform: scale(0.9);
+    opacity: 1 !important;
+  }
+
+  .language-item-text {
+    //background-color: var(--color-pastel-green);
+    opacity: 1;
+  }
+}

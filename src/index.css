@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-pastel-green-number: 162 173 89;
+    --color-pastel-pink-number: 222 137 190;
+    --color-pastel-blue: 120 195 251;
+    --color-pastel-green: rgb(var(--color-pastel-green-number));
+    --color-pastel-pink: rgb(var(--color-pastel-pink-number));
+    --color-pastel-blue: rgb(var(--color-pastel-pink-blue));
+  }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

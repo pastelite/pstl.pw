@@ -1,0 +1,44 @@
+.active {
+  .page-list-item {
+    color: #00c2d1;
+  }
+}
+
+.page-list-item {
+  //font-size:1.2em;
+  font-weight: 600;
+
+  .page-list-item-text {
+    transition: all 0.3s;
+    position: relative;
+    //display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      bottom: 2px;
+      width: 0;
+      height: 2px;
+      background-color: aqua;
+      border-radius: 1em;
+      transition: all 0.3s;
+      //width: 50%;
+    }
+  }
+
+  &:hover {
+    .page-list-item-text {
+      //font-size: x-small;
+
+      transform: translateY(-10px);
+
+      &::after {
+        width: 1em;
+        transform: translateY(10px);
+      }
+    }
+  }
+}

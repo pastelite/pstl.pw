@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.App {
+  font-family: "Red Hat Display", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.background {
+  background-color: #13131c;
+  background-image: repeating-radial-gradient(
+      circle at calc(50% + 0.5 * 56rem - 42px) calc(0.5 * (100vh - 5em) - 35px),
+      transparent 0,
+      #13131c 50px
+    ),
+    repeating-linear-gradient(#13131c, #00c2d111);
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.background.zoom {
+  transform: scale(1.2) translateX(-69px) translateY(9px);
+}
+
+@media screen and (max-width: 768px) {
+  .background {
+    background-image: repeating-radial-gradient(
+        circle at calc(50% + 75px) calc(0.5 * (100vh - 5em) - 90px),
+        transparent 0,
+        #13131c 50px
+      ),
+      repeating-linear-gradient(#13131c, #00c2d111);
+  }
+
+  .background.zoom {
+    transform: scale(1.2) translateX(-12px) translateY(21px);
+  }
+}
+
+.other-page {
+  h1 {
+    @apply font-bold text-7xl text-primary mb-8 mt-20;
+  }
+
+  h2 {
+    @apply font-medium text-4xl text-primary my-8;
+  }
+
+  p {
+    @apply my-4;
+  }
+
+  /*  a {
+    position: relative;
+    display: inline-block;
+    color: #46C3AD;
+    transition: all .3s;
+
+    &::after {
+      position: absolute;
+      content: '';
+      background: #46C3AD;
+      height: 0.1em;
+      left:0;
+      right:0;
+      width: calc(100% - 10px);
+      margin:auto;
+      bottom:0;
+      border-radius: 1em;
+      transition: all .3s;
+    }
+
+    &:hover {
+      color: 	#66DFC8;
+      &::after {
+        width: 100%;
+        background: 	#66DFC8;
+      }
+    }
+  } */
+}
