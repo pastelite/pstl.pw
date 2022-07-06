@@ -8,7 +8,7 @@
 .background {
   background-color: #13131c;
   background-image: repeating-radial-gradient(
-      circle at calc(50% + 0.5 * 56rem - 42px) calc(0.5 * (100vh - 5em) - 35px),
+      circle at calc(50% + 0.5 * min(100vw - 20px - 2em,56rem) - 75px) calc(0.5 * (100vh - 5em) - 7px),
       transparent 0,
       #13131c 50px
     ),
@@ -17,25 +17,27 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  transform-origin: calc(50% + 0.5 * min(100vw - 20px - 2em,56rem) - 75px) calc(0.5 * (100vh - 5em) - 7px);
   transition: transform 0.3s;
 }
 
 .background.zoom {
-  transform: scale(1.2) translateX(-69px) translateY(9px);
+  transform: scale(1.2);
 }
 
 @media screen and (max-width: 768px) {
   .background {
     background-image: repeating-radial-gradient(
-        circle at calc(50% + 75px) calc(0.5 * (100vh - 5em) - 90px),
+        circle at calc(50% + 75px) calc(0.5 * (100vh - 5em) - 60px),
         transparent 0,
         #13131c 50px
       ),
       repeating-linear-gradient(#13131c, #00c2d111);
+    transform-origin: calc(50% + 75px) calc(0.5 * (100vh - 5em) - 60px);
   }
 
   .background.zoom {
-    transform: scale(1.2) translateX(-12px) translateY(21px);
+    transform: scale(1.2);
   }
 }
 

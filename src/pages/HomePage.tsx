@@ -14,7 +14,7 @@ export default function HomePage({ setIsZoom, ...otherProps }: HomePageProps) {
         src={logo}
         onMouseOver={() => setIsZoom(true)}
         onMouseLeave={() => setIsZoom(false)}
-        className="pastel-logo"
+        className="pastel-logo p-8 md:pr-8"
         alt="logo"
       />
       <div>
