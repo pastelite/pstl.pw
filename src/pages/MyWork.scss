@@ -1,16 +1,16 @@
 .my-works-item-box {
-  @apply m-2 h-[3.3em] md:h-[10em] bg-gray-800 rounded-md overflow-hidden cursor-pointer md:flex-1 border border-primary/50;
+  @apply m-2 h-[3.3em] lg:h-[10em] box-border bg-gray-800 rounded-md overflow-hidden cursor-pointer lg:flex-1 outline outline-2 outline-primary relative;
   flex-grow: 1;
   flex-shrink: 1;
   transition: all 0.3s;
 
   .my-works-item-container {
-    @apply p-4 h-full w-full flex flex-col relative;
+    @apply box-border absolute p-2 w-full h-full;
     transition: all 0.3s;
   }
 
   .header {
-    @apply font-bold bg-black/80 p-2 mb-1 w-fit text-white;
+    @apply font-bold bg-black/80 p-2 w-fit text-white;
     //height: 0;
 
     transition: all 0.3s;
@@ -25,13 +25,14 @@
   .link-container {
     @apply absolute bottom-0 right-0 justify-end p-2;
     opacity: 0;
+    pointer-events: none;
 
     transition: all 0.3s;
 
     .link {
       @apply bg-primary p-1 px-2 rounded-md cursor-pointer text-black hover:scale-90;
       transition: transform 0.2s;
-      pointer-events: none;
+      
 
       &::after {
         content: " >";
@@ -44,7 +45,7 @@
     flex-grow: 2;
 
     .my-works-item-container {
-      @apply backdrop-filter-none md:backdrop-blur bg-black/80;
+      @apply backdrop-filter-none bg-black/80;
       //background-color: #00000088;
       //backdrop-filter: blur(5px);
 
@@ -59,10 +60,7 @@
       .link-container {
         opacity: 1;
         //pointer-events: auto;
-
-        .link {
-          pointer-events: auto !important;
-        }
+        pointer-events: auto !important;
       }
     }
   }

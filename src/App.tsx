@@ -16,7 +16,7 @@ function App() {
     <>
       <Background isZoom={isZoom} />
       <div className="App text-gray-300">
-        <div className="min-h-[calc(100vh-5em)] p-4 overflow-hidden flex flex-row justify-center items-center m-auto w-[calc(100vw-20px)]">
+        <div className="min-h-[calc(100vh-5em)] mb-[5em] p-4 overflow-hidden flex flex-row justify-center items-center m-auto w-[calc(100vw-20px)]">
           <Routes>
             <Route path="/" element={<HomePage setIsZoom={setIsZoom} />} />
             <Route path="about" element={<AboutPage />} />
