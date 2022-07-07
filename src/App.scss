@@ -8,7 +8,8 @@
 .background {
   background-color: #13131c;
   background-image: repeating-radial-gradient(
-      circle at calc(50% + 0.5 * min(100vw - 20px - 2em,56rem) - 75px) calc(0.5 * (100vh - 5em) - 7px),
+      circle at calc(50% + 0.5 * min(100vw - 20px - 2em, 56rem) - 75px)
+        calc(0.5 * (100vh - 5em) - 7px),
       transparent 0,
       #13131c 50px
     ),
@@ -17,7 +18,8 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  transform-origin: calc(50% + 0.5 * min(100vw - 20px - 2em,56rem) - 75px) calc(0.5 * (100vh - 5em) - 7px);
+  transform-origin: calc(50% + 0.5 * min(100vw - 20px - 2em, 56rem) - 75px)
+    calc(0.5 * (100vh - 5em) - 7px);
   transition: transform 0.3s;
 }
 

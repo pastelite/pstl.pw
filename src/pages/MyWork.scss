@@ -32,7 +32,6 @@
     .link {
       @apply bg-primary p-1 px-2 rounded-md cursor-pointer text-black hover:scale-90;
       transition: transform 0.2s;
-      
 
       &::after {
         content: " >";
@@ -50,7 +49,7 @@
       //backdrop-filter: blur(5px);
 
       .header {
-        @apply bg-transparent
+        @apply bg-transparent;
       }
 
       .description {
