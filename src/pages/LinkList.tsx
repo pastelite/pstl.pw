@@ -1,9 +1,9 @@
 import { faDiscord, faGithub, faReddit, faSteam, faWikipediaW, IconDefinition } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FC, HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes } from "react";
 import Osu from "../icons/osu.svg?component";
-import "./LinkList.scss"
+import "./LinkList.scss";
 
 export default function LinkList() {
   return (
@@ -16,7 +16,13 @@ export default function LinkList() {
       </div>
       <h2>Personal</h2>
       <div className="flex flex-wrap">
-        <LinkListItem faIcon={faEnvelope} link="mailto:pastelite@pstl.pw">email</LinkListItem>
+        <LinkListItem faIcon={faEnvelope} link="mailto:pastelite@pstl.pw">Email (open app)</LinkListItem>
+          <div className="link-list-item path-fill-white cursor-pointer" onClick={()=>
+            navigator.clipboard.writeText("pastelite@pstl.pw")
+          }>
+            <FontAwesomeIcon icon={faEnvelope} size={"lg"} className="mr-3"></FontAwesomeIcon>
+            Email (clipboard)
+          </div>
         <LinkListItem faIcon={faDiscord} link="https://discordapp.com/users/376314898562678788">Discord</LinkListItem>
         <LinkListItem faIcon={faReddit} link="https://www.reddit.com/user/pastelite-">Reddit</LinkListItem>
         <LinkListItem svgLocation={<Osu></Osu>} link="https://osu.ppy.sh/users/7098588">osu!</LinkListItem>

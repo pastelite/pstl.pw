@@ -99,6 +99,7 @@ function WhatIKnow() {
           }
         })}
       </div>
+      <div className="text-base">* High experience for a guy with a single year of coding experience, noob according to others</div>
     </div>
   );
 }
@@ -121,7 +122,7 @@ function WhatIKnowKey() {
         <span className="text-base">high</span>
         <div className="w-[4em] h-1 bg- bg-gradient-to-r from-sky-500 to-transparent inline-block mx-1"></div>
         <span className="text-base mr-2">low</span>
-        Experience
+        Experience*
       </div>
     </div>
   );
