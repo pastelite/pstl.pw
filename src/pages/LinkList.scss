@@ -1,0 +1,22 @@
+.link-list-item {
+  @apply border py-3 px-4 m-2 rounded-md flex items-center;
+  transition: all .2s;
+
+  &.path-fill-white {
+    path {
+      fill: #FFF;
+      transition: all .2s;
+    }
+  }
+
+  &:hover {
+    @apply bg-primary border-primary scale-95 text-black;
+
+    &.path-fill-white {
+      path {
+        fill: #000
+      }
+    }
+  }
+
+}

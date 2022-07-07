@@ -1,34 +1,48 @@
-import { HTMLAttributes } from "react";
+import { faDiscord, faGithub, faReddit, faSteam, faWikipediaW, IconDefinition } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FC, HTMLAttributes, ReactNode } from "react";
+import Osu from "../icons/osu.svg?component";
+import "./LinkList.scss"
 
 export default function LinkList() {
   return (
     <div className="max-w-4xl w-screen text-2xl other-page">
       <h1>Links</h1>
       <div className="flex flex-wrap">
-        <LinkListItem link="https://www.reddit.com/user/pastelite-">
-          Reddit
-        </LinkListItem>
-        <LinkListItem>Discord</LinkListItem>
-        <LinkListItem>Wikipedia</LinkListItem>
-        <LinkListItem>Wiktionary</LinkListItem>
-        <LinkListItem>Tatoeba</LinkListItem>
-        <LinkListItem>Steam</LinkListItem>
-        <LinkListItem>Osu</LinkListItem>
+        <LinkListItem faIcon={faGithub} link="https://github.com/pastelite">Github</LinkListItem>
+        <LinkListItem faIcon={faWikipediaW} link="https://th.wikipedia.org/wiki/User:ZilentFyld">Wikipedia</LinkListItem>
+        <LinkListItem faIcon={faWikipediaW} link="https://th.wiktionary.org/wiki/User:ZilentFyld">Wiktionary</LinkListItem>
       </div>
-      <h2></h2>
+      <h2>Personal</h2>
+      <div className="flex flex-wrap">
+        <LinkListItem faIcon={faEnvelope} link="mailto:pastelite@pstl.pw">email</LinkListItem>
+        <LinkListItem faIcon={faDiscord} link="https://discordapp.com/users/376314898562678788">Discord</LinkListItem>
+        <LinkListItem faIcon={faReddit} link="https://www.reddit.com/user/pastelite-">Reddit</LinkListItem>
+        <LinkListItem svgLocation={<Osu></Osu>} link="https://osu.ppy.sh/users/7098588">osu!</LinkListItem>
+        <LinkListItem faIcon={faSteam} link="https://steamcommunity.com/id/pastelite/">Steam</LinkListItem>
+      </div>
     </div>
   );
 }
 
 interface LinkListItemProps extends HTMLAttributes<HTMLDivElement> {
-  link?: string;
+  link?: string
+  useSVG?: boolean
+  faIcon?: IconDefinition
+  svgLocation?: JSX.Element
 }
 
-function LinkListItem(props: LinkListItemProps) {
+function LinkListItem({children, useSVG, faIcon, svgLocation, ...props}: LinkListItemProps) {
   return (
-    <a href={props.link}>
-      <div {...props} className="border py-3 px-4 m-2 rounded-md">
-        {props.children}
+    <a href={props.link} className="cursor-pointer">
+      <div {...props} className="link-list-item path-fill-white">
+        {
+          faIcon ? <FontAwesomeIcon icon={faIcon} size={"lg"} className="mr-3"></FontAwesomeIcon> : (
+            svgLocation ? <div className="w-7 mr-3">{svgLocation}</div> : ""
+          )
+        }
+        {children}
       </div>
     </a>
   );
