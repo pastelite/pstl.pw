@@ -52,7 +52,7 @@ export default function MyWork() {
     [
       "Current Pstl.pw site",
       "Current website, written in React",
-      ,
+      ["https://github.com/pastelite/pstl.pw", ,],
       /* ["https://github.com/pastelite/pstl.pw-old",,] */ newPstl,
     ],
   ];
